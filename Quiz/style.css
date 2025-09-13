@@ -1,0 +1,55 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Screen Centering */
+.screen {
+  text-align: center;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 350px;
+}
+
+/* Hide class */
+.hide {
+  display: none;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Options Styling */
+#options button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  background: #eee;
+  color: #333;
+}
+
+#options button:hover {
+  background: #ddd;
+}

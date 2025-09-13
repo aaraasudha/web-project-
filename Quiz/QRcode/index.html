@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Reader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      margin-top: 40px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    #reader {
+      width: 300px;
+      margin: auto;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>QR Code Reader</h1>
+  <!-- camera open aagura place -->
+  <div id="reader"></div>
+
+  <!-- result QR code value display pannum -->
+  <div id="result">Result will show here</div>
+
+  <!-- qr library use panrom -->
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script>
+    // qr scanner load pannum
+    function onScanSuccess(decodedText, decodedResult) {
+      // QR la irukura text result div la show pannum
+      document.getElementById("result").innerHTML = "Scanned Result: " + decodedText;
+    }
+
+    // error vantha ignore pannunga
+    function onScanError(errorMessage) {
+      console.log("Error: ", errorMessage);
+    }
+
+    // div ku id kuduthu reader ah attach pannrom
+    let html5QrcodeScanner = new Html5QrcodeScanner(
+      "reader", { fps: 10, qrbox: 250 });
+
+    // success + error function call
+    html5QrcodeScanner.render(onScanSuccess, onScanError);
+  </script>
+
+</body>
+</html>
